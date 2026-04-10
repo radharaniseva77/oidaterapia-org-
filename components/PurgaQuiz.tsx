@@ -53,7 +53,7 @@ export default function PurgaQuiz() {
       <div className="relative z-10 min-h-[280px]">
         <AnimatePresence mode="wait">
           {step === 1 && (
-            <motion.div key="step1" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
+            <motion.div key="step1" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-8 md:p-10 border border-white relative z-20">
               <label className="block text-indigo font-heading text-xl font-medium tracking-wide">
                 1. Identificación: ¿Qué carga intoxica tu paz interior ahora?
               </label>
@@ -74,7 +74,7 @@ export default function PurgaQuiz() {
           )}
 
           {step === 2 && (
-            <motion.div key="step2" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
+            <motion.div key="step2" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-8 md:p-10 border border-white relative z-20">
               <label className="block text-indigo font-heading text-xl font-medium tracking-wide">
                 2. Localización: Visualiza: ¿Si este peso tuviera color o forma, dónde está en tu cuerpo?
               </label>
@@ -95,7 +95,7 @@ export default function PurgaQuiz() {
           )}
 
           {step === 3 && (
-            <motion.div key="step3" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 text-center">
+            <motion.div key="step3" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 text-center bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-8 md:p-10 border border-white relative z-20">
               <label className="block text-indigo font-heading text-xl font-medium tracking-wide mb-8">
                 3. Entrega: ¿Estás dispuesto/a a soltar esto?
               </label>
@@ -123,7 +123,7 @@ export default function PurgaQuiz() {
           )}
 
           {step === 4 && (
-            <motion.div key="step4" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
+            <motion.div key="step4" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-8 md:p-10 border border-white relative z-20">
               <label className="block text-indigo font-heading text-xl font-medium tracking-wide">
                 4. Transmutación: ¿Qué cualidad divina invitas a ocupar este espacio?
               </label>
@@ -144,7 +144,7 @@ export default function PurgaQuiz() {
           )}
 
           {step === 5 && (
-            <motion.div key="step5" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 text-center">
+            <motion.div key="step5" variants={containerVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }} className="space-y-6 text-center bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-8 md:p-10 border border-white relative z-20">
               <h4 className="text-3xl font-heading font-bold text-indigo mb-3 drop-shadow-sm">Un Paso Hacia la Luz</h4>
               <p className="text-indigo/80 mb-6 text-lg tracking-wide">
                 Déjanos tu correo para enviarte recomendaciones personalizadas y guías de integración espiritual.

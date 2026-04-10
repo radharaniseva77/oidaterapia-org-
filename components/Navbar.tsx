@@ -44,7 +44,7 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveDropdown(mod.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link href={mod.path} className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-out text-indigo bg-transparent hover:glass hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
+                <Link href={mod.path} className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-out text-indigo bg-cielo hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
                   {mod.name}
                   <ChevronDown className="ml-1 h-3 w-3 opacity-70" />
                 </Link>

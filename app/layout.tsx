@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${outfit.variable} ${plusJakarta.variable} font-sans antialiased text-indigo flex flex-col min-h-screen relative`}
+        className={`${outfit.variable} ${plusJakarta.variable} font-sans antialiased bg-arena text-indigo flex flex-col min-h-screen relative`}
       >
         <Navbar />
         <main className="flex-grow">
