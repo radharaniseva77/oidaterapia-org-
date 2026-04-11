@@ -19,22 +19,21 @@ export default function FloatingWhatsApp() {
           </svg>
         </motion.a>
 
-        {/* Animado Flotante superior */}
+        {/* Único PNG flotante transparente */}
         <motion.div
-          className="absolute -top-40 -right-10 pointer-events-none"
+          className="absolute -top-24 right-0 pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.img 
             src="/assets/oidaterapia/animado-flotante.png" 
-            alt="Oida Terapia" 
-            className="w-48 h-48 object-contain drop-shadow-xl"
+            alt="Interactivo Oida Terapia" 
+            className="bg-transparent w-32 h-auto object-contain drop-shadow-xl"
             animate={{ 
-              y: [0, -15, 0], 
-              rotate: [15, 15, 15] 
+              y: [0, -10, 0], 
             }}
             transition={{ 
-              duration: 4, 
+              duration: 3, 
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
