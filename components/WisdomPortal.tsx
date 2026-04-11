@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles } from 'lucide-react';
+import { createPortal } from 'react-dom';
 
 export default function WisdomPortal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,44 +80,54 @@ export default function WisdomPortal() {
         </motion.button>
       </div>
 
-      {/* MODAL PORTAL DE SABIDURÍA */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-black/60 backdrop-blur-md"
-          >
-            {/* Fondo Modal - Espacio Extendido */}
-            <motion.div 
-              className="absolute inset-0 w-full h-full opacity-30"
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 10, ease: "easeOut" }}
-            >
-              <img 
-                src="/assets/oidaterapia/espacio-fondo.png" 
-                alt="Modal Space" 
-                className="w-full h-full object-cover" 
-              />
-            </motion.div>
-
-            {/* Contenedor Contenido */}
+      {/* MODAL PORTAL DE SABIDURÍA (RENDERIZADO EN EL BODY EXTERNO) */}
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
-              initial={{ y: 50, opacity: 0, scale: 0.95 }}
-              animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 30, opacity: 0, scale: 0.95 }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.8 }}
-              className="relative w-full max-w-6xl mx-auto p-6 md:p-12 my-10 bg-[#0A192F]/80 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl flex flex-col pt-16 z-20 overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8"
+              style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
             >
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="absolute top-6 right-6 p-3 rounded-full bg-white/5 hover:bg-white/20 text-white transition-all group"
+              {/* Fondo Semi-transparente oscuro */}
+              <div className="absolute inset-0 bg-[#0A192F]/90 backdrop-blur-xl" />
+
+              {/* Fondo Modal - Espacio Extendido */}
+              <motion.div 
+                className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 10, ease: "easeOut" }}
               >
-                <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
-              </button>
+                <img 
+                  src="/assets/oidaterapia/espacio-fondo.png" 
+                  alt="Modal Space" 
+                  className="w-full h-full object-cover mix-blend-screen" 
+                />
+              </motion.div>
+
+              {/* Contenedor Contenido Scrollable */}
+              <motion.div
+                initial={{ y: 50, opacity: 0, scale: 0.95 }}
+                animate={{ y: 0, opacity: 1, scale: 1 }}
+                exit={{ y: 30, opacity: 0, scale: 0.95 }}
+                transition={{ type: "spring", bounce: 0.2, duration: 0.8 }}
+                className="relative w-full max-w-6xl max-h-full overflow-y-auto mx-auto p-6 md:p-12 bg-indigo/40 border border-cielo/20 rounded-3xl shadow-2xl flex flex-col z-20"
+                style={{ 
+                  scrollbarWidth: 'thin', 
+                  scrollbarColor: 'rgba(255,255,255,0.2) transparent' 
+                }}
+              >
+                {/* Botón Cerrar Gigante y Claro */}
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="absolute top-4 right-4 md:top-8 md:right-8 p-3 rounded-full bg-white/10 hover:bg-white/30 text-white transition-all group z-50 backdrop-blur-md border border-white/20"
+                >
+                  <X className="w-8 h-8 md:w-10 md:h-10 group-hover:rotate-90 transition-transform duration-300 drop-shadow-md" />
+                </button>
 
               <div className="text-center mb-12">
                 <motion.h2 
@@ -231,7 +242,9 @@ export default function WisdomPortal() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+      )}
     </>
   );
 }
