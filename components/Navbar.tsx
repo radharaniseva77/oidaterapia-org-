@@ -24,22 +24,26 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto flex items-center justify-between glass rounded-full px-6 py-2">
-        <div className="flex items-center">
-          <WisdomPortal />
-        </div>
+    <nav className="fixed w-full top-0 z-[60] bg-[#F9F9F9] shadow-md border-b border-gray-200 transition-all duration-300 py-2 px-4 sm:px-6 xl:px-8">
+      <div className="max-w-[90rem] mx-auto flex items-center justify-between">
         
-        <div className="hidden md:block">
-          <div className="flex items-baseline space-x-2">
+        {/* GRUPO IZQUIERDO: Logo masivo + Navegación */}
+        <div className="flex items-center space-x-6 xl:space-x-10 flex-1">
+          {/* LOGO */}
+          <div className="flex-shrink-0 z-[70]">
+            <WisdomPortal />
+          </div>
+          
+          {/* MENU DESKTOP */}
+          <div className="hidden lg:flex items-center space-x-2">
             {modules.map((mod) => (
               <div key={mod.name} className="relative group"
                 onMouseEnter={() => setActiveDropdown(mod.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link href={mod.path} className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-out text-indigo bg-cielo hover:-translate-y-1 hover:shadow-lg inline-flex items-center">
+                <Link href={mod.path} className="px-4 py-2 rounded-lg text-lg xl:text-xl font-semibold transition-all duration-300 ease-out text-[#0A192F] hover:bg-gray-200 hover:shadow-sm inline-flex items-center tracking-tight">
                   {mod.name}
-                  <ChevronDown className="ml-1 h-3 w-3 opacity-70" />
+                  <ChevronDown className="ml-1.5 h-4 w-4 opacity-70" />
                 </Link>
                 <AnimatePresence>
                   {activeDropdown === mod.name && (
@@ -48,11 +52,11 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-3 w-48 rounded-2xl shadow-xl glass text-indigo overflow-hidden backdrop-blur-xl"
+                      className="absolute left-0 mt-3 w-56 rounded-2xl shadow-xl bg-white text-[#0A192F] border border-gray-100 overflow-hidden z-[80]"
                     >
                       <div className="py-2">
                         {mod.sub.map((subItem) => (
-                          <Link key={subItem} href={`${mod.path}#${subItem.toLowerCase().replace(/ /g, '-')}`} className="block px-4 py-2 text-sm hover:bg-white/40 transition-colors font-medium">
+                          <Link key={subItem} href={`${mod.path}#${subItem.toLowerCase().replace(/ /g, '-')}`} className="block px-5 py-3 text-base hover:bg-gray-50 hover:text-cielo transition-colors font-medium">
                             {subItem}
                           </Link>
                         ))}
@@ -65,18 +69,25 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center">
-           <button className="p-2.5 rounded-full text-indigo hover:glass hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-             <Search className="h-5 w-5" />
-           </button>
+        {/* GRUPO DERECHO: Buscador Desktop */}
+        <div className="hidden lg:flex items-center flex-shrink-0 ml-auto">
+          <div className="relative group shadow-sm rounded-full">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 group-focus-within:text-[#0A192F] transition-colors z-10" />
+            <input 
+              type="text" 
+              placeholder="saber sobre las formaciones" 
+              className="pl-12 pr-6 py-3 w-72 xl:w-96 rounded-full border border-gray-300 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0A192F] focus:border-transparent transition-all text-base placeholder:text-gray-400"
+            />
+          </div>
         </div>
 
-        <div className="flex md:hidden">
+        {/* MENÚ HAMBURGUESA MÓVIL ALINEADO */}
+        <div className="flex lg:hidden ml-auto">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-full text-indigo hover:glass focus:outline-none transition-all"
+            className="inline-flex items-center justify-center p-3 rounded-full text-[#0A192F] bg-gray-200 focus:outline-none transition-all"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </button>
         </div>
       </div>
@@ -87,17 +98,17 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden glass rounded-3xl mt-4 overflow-hidden"
+            className="lg:hidden bg-white shadow-2xl rounded-3xl mt-4 overflow-hidden border border-gray-100 mx-2"
           >
             <div className="px-4 py-4 space-y-2">
               {modules.map((mod) => (
                 <div key={mod.name}>
                   <button
                     onClick={() => toggleDropdown(mod.name)}
-                    className="w-full text-left px-4 py-3 rounded-2xl text-base font-medium flex justify-between items-center text-indigo hover:bg-white/30 transition-colors"
+                    className="w-full text-left px-4 py-4 rounded-xl text-lg font-bold flex justify-between items-center text-[#0A192F] hover:bg-gray-50 transition-colors"
                   >
                     <Link href={mod.path} onClick={() => setIsOpen(false)}>{mod.name}</Link>
-                    <ChevronDown className={`h-5 w-5 transform transition-transform duration-300 ${activeDropdown === mod.name ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-6 w-6 transform transition-transform duration-300 ${activeDropdown === mod.name ? 'rotate-180 text-[#0A192F]' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {activeDropdown === mod.name && (
@@ -105,13 +116,13 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="pl-6 pb-2 space-y-1"
+                        className="pl-6 pb-2 space-y-1 border-l-2 border-gray-100 ml-4 mt-1"
                       >
                         {mod.sub.map((subItem) => (
                           <Link
                             key={subItem}
                             href={`${mod.path}#${subItem.toLowerCase().replace(/ /g, '-')}`}
-                            className="block px-3 py-2 rounded-xl text-sm font-medium text-indigo/80 hover:text-indigo hover:bg-white/40 transition-colors"
+                            className="block px-3 py-3 rounded-xl text-base font-medium text-gray-600 hover:text-[#0A192F] hover:bg-gray-50 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {subItem}
@@ -122,11 +133,15 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
               ))}
-              <div className="pt-4 mt-2 border-t border-indigo/10">
-                 <button className="w-full flex items-center justify-center p-4 rounded-full font-medium shadow-md bg-cielo/80 hover:bg-cielo transition text-indigo active:scale-95">
-                   <Search className="h-5 w-5 mr-2" />
-                   Buscar en la Biblioteca
-                 </button>
+              <div className="pt-6 mt-4 border-t border-gray-200">
+                <div className="relative group mx-2 mb-2">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 group-focus-within:text-[#0A192F]" />
+                  <input 
+                    type="text" 
+                    placeholder="saber sobre las formaciones" 
+                    className="pl-12 pr-6 py-4 w-full rounded-full border border-gray-300 bg-gray-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0A192F] transition-all text-base"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>

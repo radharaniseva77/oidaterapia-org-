@@ -20,7 +20,7 @@ export default function WisdomPortal() {
   return (
     <>
       {/* EL MEDALLÓN (Logo Trigger) */}
-      <div className="relative flex items-center justify-center -my-6 z-50">
+      <div className="relative flex items-center justify-center mt-1 mb-1 lg:mt-4 lg:-mb-6 z-50">
         {/* Pulsing Light Glow Effect behind the medallion */}
         <motion.div 
           className="absolute inset-0 bg-[#0A192F]/40 rounded-full blur-xl"
@@ -32,7 +32,7 @@ export default function WisdomPortal() {
           onClick={() => setIsOpen(true)}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#0A192F] shadow-[0_0_20px_rgba(10,25,47,0.7)] hover:shadow-[0_0_35px_rgba(255,255,255,0.3)] border border-white/10 overflow-hidden flex items-center justify-center group outline-none"
+          className="relative w-20 h-20 lg:w-32 lg:h-32 rounded-full bg-[#0A192F] shadow-[0_0_20px_rgba(10,25,47,0.7)] hover:shadow-[0_0_35px_rgba(255,255,255,0.3)] border border-white/10 overflow-hidden flex items-center justify-center group outline-none"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           layoutId="portal-logo"
@@ -60,7 +60,7 @@ export default function WisdomPortal() {
           <motion.img 
             src="/assets/oidaterapia/logo-Oidaterapia.png"
             alt="Oidaterapia Logo" 
-            className="absolute w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] z-10"
+            className="absolute w-14 h-14 lg:w-24 lg:h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] z-10"
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ type: "spring", stiffness: 300 }}
           />
