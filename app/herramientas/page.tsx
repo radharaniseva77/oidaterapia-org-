@@ -22,10 +22,20 @@ export default function HerramientasPage() {
         <PurgaQuiz />
       </section>
 
-      <section className="bg-white/50 p-8 rounded-3xl border border-tierra/30 text-center text-indigo">
-        <h2 className="text-2xl font-bold mb-4 font-heading">Biblioteca de Diagramas</h2>
-        <p className="opacity-80">Próximamente: Explora visualmente las etapas del camino de sanación.</p>
-      </section>
+      <div className="grid md:grid-cols-2 gap-8 text-left mb-16">
+        <div className="bg-white p-8 rounded-3xl shadow-lg border border-indigo/10">
+          <h3 className="text-2xl font-heading font-bold text-indigo mb-4">Cuestionarios</h3>
+          <p className="text-indigo/80 font-sans text-lg leading-relaxed">
+            Los cuestionarios son una herramienta efectiva para que el animado comprenda su acercamiento al Círculo Sanador por medio de sus acciones, reconociendo hacia dónde avanza, cuándo se detiene o retrocede y cuáles actitudes predominan en su vida. Es un cuestionario de ubicación y de reconocimiento de zonas para mejorar.
+          </p>
+        </div>
+        <div className="bg-arena p-8 rounded-3xl shadow-lg border-l-4 border-cielo">
+          <h3 className="text-2xl font-heading font-bold text-indigo mb-4">Las Purgas</h3>
+          <p className="text-indigo/80 font-sans text-lg leading-relaxed">
+            Las Purgas de la OIDA Terapia nos ayudan a liberarnos de las influencias poco saludables. La OIDA Terapia promueve hacernos conscientes de estas influencias y liberarnos de ellas evitando ser sus receptores, por ejemplo dejando de consumirlas innecesariamente.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

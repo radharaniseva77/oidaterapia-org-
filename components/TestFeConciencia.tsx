@@ -7,46 +7,71 @@ const questions = [
   {
     question: "En tus etapas de crecimiento, ¿dónde solías depositar tu fe de forma más instintiva?",
     options: [
-      { id: 'A', text: "En la autoridad, recompensas o el miedo." },
-      { id: 'B', text: "En el escape de la realidad o el placer inmediato." },
-      { id: 'C', text: "En personas o ideologías que me defraudaron." },
-      { id: 'D', text: "En la compasión, la naturaleza o el cuidado genuino." }
+      { id: 'A', text: "En la autoridad, el qué dirán o el miedo al castigo." },
+      { id: 'B', text: "En el escape de la realidad o el placer inmediato de los sentidos." },
+      { id: 'C', text: "En ideologías que me exigían devoción ciega y controlaban mi entorno." },
+      { id: 'D', text: "En personas o instituciones que finalmente me defraudaron profundamente." },
+      { id: 'E', text: "En la compasión, la naturaleza y una conexión intuitiva de cuidado genuino." }
     ]
   },
   {
-    question: "Hoy en día, ¿qué motor mueve tus decisiones?",
+    question: "Hoy en día, ¿qué motor mueve principalmente tus decisiones?",
     options: [
-      { id: 'A', text: "Mis proyectos, el activismo o mis argumentos." },
-      { id: 'B', text: "La competencia y el confort de mis sentidos." },
-      { id: 'C', text: "Sigo buscando, a veces dudo por guías errados del pasado." },
-      { id: 'D', text: "El amor universal y el entusiasmo espiritual." }
+      { id: 'A', text: "Mis proyectos personales, el éxito material y mis propios argumentos lógicos." },
+      { id: 'B', text: "La competencia constante y maximizar el confort a toda costa." },
+      { id: 'C', text: "Las reglas estrictas que alguien más delineó para mí, temiendo equivocarme." },
+      { id: 'D', text: "Sigo buscando sin rumbo, a veces dudo de todo por guías errados del pasado." },
+      { id: 'E', text: "El amor universal, el entusiasmo espiritual y estar en armonía con el entorno." }
     ]
   },
   {
-    question: "Ante una crisis profunda, ¿cómo actúa tu fe?",
+    question: "Ante una crisis profunda, ¿cómo reacciona espontáneamente tu fe?",
     options: [
-      { id: 'A', text: "Busco explicaciones lógicas o culpables." },
-      { id: 'B', text: "Busco intoxicación física/emocional para evadir el dolor." },
-      { id: 'C', text: "Siento el inmenso dolor de haber confiado equivocadamente." },
-      { id: 'D', text: "Busco liberarme del sufrimiento a través del servicio y el Guía Interno." }
+      { id: 'A', text: "Busco explicaciones prácticas, lógicas y trato de buscar culpables rápidos." },
+      { id: 'B', text: "Busco intoxicación física o emocional para evadir o anestesiar el dolor." },
+      { id: 'C', text: "Me aferro desesperadamente a dogmas que prometen salvarme si obedezco." },
+      { id: 'D', text: "Siento un inmenso vacío y dolor al creer que todo esfuerzo es inútil." },
+      { id: 'E', text: "Busco liberarme del sufrimiento a través del servicio, el perdón y el Guía Interno." }
     ]
   },
   {
     question: "¿Cómo percibes el propósito último de tu existencia?",
     options: [
-      { id: 'A', text: "Acumular conocimiento empírico y dejar una huella material." },
-      { id: 'B', text: "Maximizar el confort y asegurar la supervivencia." },
-      { id: 'C', text: "Sanar mi visión fragmentada por el sectarismo del mundo." },
-      { id: 'D', text: "Elevar mi nivel de conciencia y reactivar mi relación con la Divinidad." }
+      { id: 'A', text: "Acumular conocimiento empírico y dejar una huella en este mundo." },
+      { id: 'B', text: "Asegurar mi supervivencia financiera y aprovechar el tiempo pasándolo bien." },
+      { id: 'C', text: "Cumplir rígidamente una misión impuesta para no ser castigado o excluido." },
+      { id: 'D', text: "Aún no lo sé, mi visión se fragmentó por el sectarismo y el sufrimiento del mundo." },
+      { id: 'E', text: "Elevar mi nivel de conciencia divina y servir a la creación." }
     ]
   },
   {
-    question: "¿Qué herramienta es vital en tu vida para la introspección?",
+    question: "¿Qué papel juega la introspección o meditación en tu vida diaria?",
     options: [
-      { id: 'A', text: "El análisis mental o debates constantes." },
-      { id: 'B', text: "Las distracciones y entretenimiento sensorial." },
-      { id: 'C', text: "La duda constante, temiendo ser manipulado de nuevo." },
-      { id: 'D', text: "El cultivo holístico de una fe libre de dogmatismos." }
+      { id: 'A', text: "Es más bien un análisis mental, debates constantes conmigo mismo sobre mis metas." },
+      { id: 'B', text: "Evito el silencio, prefiero estar ocupado con distracciones y entretenimiento constante." },
+      { id: 'C', text: "Solo medito o reflexiono cuando sigo una técnica estricta dictada por un superior." },
+      { id: 'D', text: "Me cuesta meditar porque la duda y la desilusión interrumpen constantemente mi paz." },
+      { id: 'E', text: "Es una herramienta vital para contactar a mi Guía Interno libre de dogmatismos." }
+    ]
+  },
+  {
+    question: "Cuando te relacionas con otras tradiciones místicas, ¿cuál es tu actitud?",
+    options: [
+      { id: 'A', text: "Las respeto si tienen lógica, pero mantengo escepticismo sobre lo sobrenatural." },
+      { id: 'B', text: "Indiferencia total, creo que todas son invenciones para controlar a la gente." },
+      { id: 'C', text: "Mi tradición es la única verdadera; las demás están en el error y deben ser salvadas." },
+      { id: 'D', text: "Siento desconfianza general, ya que veo incoherencias en quienes las practican." },
+      { id: 'E', text: "Siento profunda apertura y admiración, reconociendo la fe sanadora en todas sus formas." }
+    ]
+  },
+  {
+    question: "¿Has experimentado sanación interior profunda en algún momento?",
+    options: [
+      { id: 'A', text: "He logrado metas y estabilidad, pero no lo llamaría una sanación espiritual." },
+      { id: 'B', text: "Creo que la sanación real no existe, solo hay momentos temporales de menos estrés." },
+      { id: 'C', text: "Solo cuando seguí ciegamente a un líder, aunque en el fondo sentía miedo." },
+      { id: 'D', text: "Intenté sanar, pero las traiciones y las crisis me demostraron que es muy efímero." },
+      { id: 'E', text: "Sí, asumiendo mi rol de animado, purificando mis hábitos y guiado por la fe." }
     ]
   }
 ];
@@ -54,19 +79,23 @@ const questions = [
 const resultsData = {
   A: {
     estado: "Fe Parcial",
-    diagnostico: "Tu fe se basa en nociones que pueden llevarte a errores. Es una oportunidad para indagar y alcanzar una fe completa."
+    diagnostico: "Tu fe se basa en nociones que aún están limitadas. Es una oportunidad para indagar más profundo, expandiendo tu consciencia hacia las dimensiones espirituales sin miedo."
   },
   B: {
     estado: "Fe Distorsionada",
-    diagnostico: "Ciertos hábitos o apegos a los sentidos están frenando tu sanación. Es momento de reorientar tu energía."
+    diagnostico: "Ciertos hábitos, egoísmo o apegos te están alejando de tu esencia real. Es momento de reorientar tu energía, practicando la compasión y priorizando la fe."
   },
   C: {
-    estado: "Fe Decepcionada",
-    diagnostico: "Has sentido el dolor de confiar equivocadamente, pero esto es un estímulo para buscar una guía genuina y trascendental."
+    estado: "Fe Manipulada",
+    diagnostico: "Has entregado tu voluntad a estructuras dogmáticas por temor o dependencia. Es tiempo de recuperar tu autoría personal y escuchar directamente la voz de tu Guía Interno."
   },
   D: {
+    estado: "Fe Decepcionada",
+    diagnostico: "Las frustraciones del pasado te han llevado a un estado de escepticismo doloroso. No obstante, esa misma decepción es el impulso inicial necesario para buscar una verdad incondicional."
+  },
+  E: {
     estado: "Fe Sanadora",
-    diagnostico: "Tu fe te conecta con la verdad y te otorga fuerza. Estás en el camino del Círculo Sanador."
+    diagnostico: "Tu fe te conecta directamente con la verdad universal, irradiando coherencia. Continúa tu camino en el Círculo Sanador con firmeza, amor y servicio incondicional para con los demás."
   }
 };
 
@@ -75,7 +104,9 @@ const backgrounds = [
   "#B0D4E3", // P2
   "#D9E2E8", // P3
   "#8DA5B8", // P4
-  "#3b5998", // P5
+  "#5D8AA8", // P5
+  "#3b5998", // P6
+  "#2C3E50", // P7
   "#1A365D"  // Result
 ];
 
@@ -85,6 +116,8 @@ const textColors = [
   "text-indigo", // P3
   "text-white",  // P4
   "text-white",  // P5
+  "text-white",  // P6
+  "text-white",  // P7
   "text-arena"   // Result
 ];
 
@@ -111,7 +144,7 @@ export default function TestFeConciencia() {
       return acc;
     }, {} as Record<string, number>);
     
-    return Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b) as 'A'|'B'|'C'|'D';
+    return Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b) as 'A'|'B'|'C'|'D'|'E';
   };
 
   const currentBg = backgrounds[Math.min(currentStep, backgrounds.length - 1)];
