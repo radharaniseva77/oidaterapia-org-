@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import WisdomPortal from "@/components/WisdomPortal";
 
 const modules = [
   { name: "Sabiduría", path: "/sabiduria", sub: ["Psicología Perenne", "Acerca de", "Los 8 Principios"] },
@@ -26,15 +27,7 @@ export default function Navbar() {
     <nav className="fixed w-full top-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between glass rounded-full px-6 py-2">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-            <div className="relative w-12 h-12 hover:scale-105 transition-transform duration-300">
-              <img 
-                src="/assets/oidaterapia/logo-Oidaterapia.png"
-                alt="Oidaterapia Logo" 
-                className="object-contain w-full h-full drop-shadow-md"
-              />
-            </div>
-          </Link>
+          <WisdomPortal />
         </div>
         
         <div className="hidden md:block">
