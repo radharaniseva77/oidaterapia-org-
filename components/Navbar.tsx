@@ -29,7 +29,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="relative w-12 h-12 hover:scale-105 transition-transform duration-300">
               <img 
-                src="/assets/oidaterapia/logo-oidaterapia.png"
+                src="/assets/oidaterapia/logo-Oidaterapia.png"
                 alt="Oidaterapia Logo" 
                 className="object-contain w-full h-full drop-shadow-md"
               />

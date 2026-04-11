@@ -5,7 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   "/assets/oidaterapia/slider-1.jpg",
-  "/assets/oidaterapia/slider-2.jpg"
+  "/assets/oidaterapia/slider-2.jpg",
+  "/assets/oidaterapia/slider-3.jpg",
+  "/assets/oidaterapia/slider-4.jpg",
+  "/assets/oidaterapia/slider-5.jpg"
 ];
 
 export default function HeroSlider() {
