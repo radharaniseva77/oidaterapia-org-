@@ -26,7 +26,7 @@ export default function FloatingWhatsApp() {
           animate={{ opacity: 1 }}
         >
           <motion.img 
-            src="/animado-flotante.png" 
+            src="/assets/oidaterapia/animado-flotante.png" 
             alt="Oida Terapia" 
             className="w-48 h-48 object-contain drop-shadow-xl"
             animate={{ 

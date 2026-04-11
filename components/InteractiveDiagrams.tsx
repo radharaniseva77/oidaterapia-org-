@@ -58,12 +58,12 @@ export default function InteractiveDiagrams() {
   ];
 
   const images = [
-    { src: "/animado-5.png", zIndex: 0 },
-    { src: "/animado-6.png", zIndex: 0 },
-    { src: "/animado-1.png", zIndex: 10 },
-    { src: "/animado-2.png", zIndex: 20 },
-    { src: "/animado-3.png", zIndex: 20 },
-    { src: "/animado-4.png", zIndex: 20 },
+    { src: "/assets/oidaterapia/animado-5.png", zIndex: 0 },
+    { src: "/assets/oidaterapia/animado-6.png", zIndex: 0 },
+    { src: "/assets/oidaterapia/animado-1.png", zIndex: 10 },
+    { src: "/assets/oidaterapia/animado-2.png", zIndex: 20 },
+    { src: "/assets/oidaterapia/animado-3.png", zIndex: 20 },
+    { src: "/assets/oidaterapia/animado-4.png", zIndex: 20 },
   ];
 
   return (
