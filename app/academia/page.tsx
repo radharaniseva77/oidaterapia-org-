@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Academia & Comunidad | Oidaterapia',
+  title: 'Academia & Comunidad | Oida Terapia',
 };
 
 export default function AcademiaPage() {

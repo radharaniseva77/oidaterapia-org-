@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'El Camino | Oidaterapia',
+  title: 'El Camino | Oida Terapia',
 };
 
 export default function ElCaminoPage() {

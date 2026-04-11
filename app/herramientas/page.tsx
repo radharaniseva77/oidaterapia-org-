@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Práctica y Herramientas | Oidaterapia',
+  title: 'Práctica y Herramientas | Oida Terapia',
 };
 
 import PurgaQuiz from "@/components/PurgaQuiz";

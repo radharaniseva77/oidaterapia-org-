@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { createPortal } from 'react-dom';
+import { useRouter } from 'next/navigation';
 
 export default function WisdomPortal() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
+
+  const handleOpenPortal = () => {
+    router.push('/');
+    setIsOpen(true);
+  };
 
   // Bloquear scroll cuando el modal está abierto
   useEffect(() => {
@@ -29,7 +36,7 @@ export default function WisdomPortal() {
         />
 
         <motion.button
-          onClick={() => setIsOpen(true)}
+          onClick={handleOpenPortal}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className="relative w-20 h-20 lg:w-32 lg:h-32 rounded-full bg-[#0A192F] shadow-[0_0_20px_rgba(10,25,47,0.7)] hover:shadow-[0_0_35px_rgba(255,255,255,0.3)] border border-white/10 overflow-hidden flex items-center justify-center group outline-none"
@@ -121,15 +128,7 @@ export default function WisdomPortal() {
                   scrollbarColor: 'rgba(255,255,255,0.2) transparent' 
                 }}
               >
-                {/* Botón Cerrar Gigante y Claro */}
-                <button 
-                  onClick={() => setIsOpen(false)}
-                  className="absolute top-4 right-4 md:top-8 md:right-8 p-3 rounded-full bg-white/10 hover:bg-white/30 text-white transition-all group z-50 backdrop-blur-md border border-white/20"
-                >
-                  <X className="w-8 h-8 md:w-10 md:h-10 group-hover:rotate-90 transition-transform duration-300 drop-shadow-md" />
-                </button>
-
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 mt-6">
                 <motion.h2 
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -137,7 +136,7 @@ export default function WisdomPortal() {
                   className="text-4xl md:text-5xl font-heading font-bold text-white flex items-center justify-center gap-3 drop-shadow-lg"
                 >
                   <Sparkles className="text-cielo w-8 h-8" />
-                  ¿Qué es Oidaterapia y su Autor?
+                  ¿Qué es la Oida Terapia y su autor?
                   <Sparkles className="text-cielo w-8 h-8" />
                 </motion.h2>
               </div>
@@ -208,7 +207,7 @@ export default function WisdomPortal() {
                        La Tesis Fundamental
                     </h3>
                     <p className="font-sans text-lg md:text-xl font-light leading-relaxed text-arena/90 mb-6">
-                      Desarrollada en el marco conceptual supremo de la <strong className="text-cielo font-medium">Psicología Perenne</strong>, la Oidaterapia plantea que el vacío humano es espiritual y no puramente material.
+                      Desarrollada en el marco conceptual supremo de la <strong className="text-cielo font-medium">Psicología Perenne</strong>, la OIDA Terapia plantea que el vacío humano es espiritual y no puramente material.
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-start">
@@ -233,7 +232,10 @@ export default function WisdomPortal() {
                   </div>
 
                   <div className="pt-6 flex justify-center">
-                    <button onClick={() => setIsOpen(false)} className="px-8 py-3 rounded-full border border-cielo text-cielo hover:bg-cielo hover:text-[#0A192F] font-bold tracking-widest uppercase transition-all duration-300">
+                    <button 
+                      onClick={() => setIsOpen(false)} 
+                      className="px-8 py-3 rounded-full border border-cielo text-cielo hover:bg-cielo hover:text-[#0A192F] font-bold tracking-widest uppercase transition-all duration-300 shadow-[0_0_15px_rgba(176,212,227,0.3)] hover:shadow-[0_0_25px_rgba(176,212,227,0.6)]"
+                    >
                       Entrar a la Plataforma
                     </button>
                   </div>

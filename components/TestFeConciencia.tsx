@@ -23,12 +23,30 @@ const questions = [
     ]
   },
   {
-    question: "Ante una crisis, ¿cómo actúa tu fe?",
+    question: "Ante una crisis profunda, ¿cómo actúa tu fe?",
     options: [
       { id: 'A', text: "Busco explicaciones lógicas o culpables." },
       { id: 'B', text: "Busco intoxicación física/emocional para evadir el dolor." },
-      { id: 'C', text: "Siento el dolor de haber confiado equivocadamente." },
-      { id: 'D', text: "Busco liberarme del sufrimiento a través del servicio." }
+      { id: 'C', text: "Siento el inmenso dolor de haber confiado equivocadamente." },
+      { id: 'D', text: "Busco liberarme del sufrimiento a través del servicio y el Guía Interno." }
+    ]
+  },
+  {
+    question: "¿Cómo percibes el propósito último de tu existencia?",
+    options: [
+      { id: 'A', text: "Acumular conocimiento empírico y dejar una huella material." },
+      { id: 'B', text: "Maximizar el confort y asegurar la supervivencia." },
+      { id: 'C', text: "Sanar mi visión fragmentada por el sectarismo del mundo." },
+      { id: 'D', text: "Elevar mi nivel de conciencia y reactivar mi relación con la Divinidad." }
+    ]
+  },
+  {
+    question: "¿Qué herramienta es vital en tu vida para la introspección?",
+    options: [
+      { id: 'A', text: "El análisis mental o debates constantes." },
+      { id: 'B', text: "Las distracciones y entretenimiento sensorial." },
+      { id: 'C', text: "La duda constante, temiendo ser manipulado de nuevo." },
+      { id: 'D', text: "El cultivo holístico de una fe libre de dogmatismos." }
     ]
   }
 ];
@@ -53,17 +71,21 @@ const resultsData = {
 };
 
 const backgrounds = [
-  "#FAF7F2", // Pregunta 1: Arena
-  "#B0D4E3", // Pregunta 2: Azul Cielo claro
-  "#3b5998", // Pregunta 3: Azul Índigo medio
-  "#1A365D"  // Resultado: Azul Índigo Profundo
+  "#FAF7F2", // P1
+  "#B0D4E3", // P2
+  "#D9E2E8", // P3
+  "#8DA5B8", // P4
+  "#3b5998", // P5
+  "#1A365D"  // Result
 ];
 
 const textColors = [
   "text-indigo", // P1
   "text-indigo", // P2
-  "text-white",  // P3
-  "text-arena"   // Res
+  "text-indigo", // P3
+  "text-white",  // P4
+  "text-white",  // P5
+  "text-arena"   // Result
 ];
 
 export default function TestFeConciencia() {
@@ -78,7 +100,7 @@ export default function TestFeConciencia() {
       setCurrentStep(currentStep + 1);
     } else {
       setAnswers(newAnswers);
-      setCurrentStep(3); // Result phase
+      setCurrentStep(questions.length); // Result phase
     }
   };
 
@@ -92,10 +114,10 @@ export default function TestFeConciencia() {
     return Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b) as 'A'|'B'|'C'|'D';
   };
 
-  const currentBg = backgrounds[currentStep];
-  const currentTextColor = textColors[currentStep];
+  const currentBg = backgrounds[Math.min(currentStep, backgrounds.length - 1)];
+  const currentTextColor = textColors[Math.min(currentStep, backgrounds.length - 1)];
 
-  const result = currentStep === 3 ? resultsData[getMajority()] : null;
+  const result = currentStep === questions.length ? resultsData[getMajority()] : null;
 
   return (
     <motion.div 
@@ -103,7 +125,7 @@ export default function TestFeConciencia() {
       animate={{ backgroundColor: currentBg }}
     >
       <AnimatePresence mode="wait">
-        {currentStep < 3 ? (
+        {currentStep < questions.length ? (
           <motion.div
             key={`question-${currentStep}`}
             initial={{ opacity: 0, y: 30 }}
@@ -114,7 +136,7 @@ export default function TestFeConciencia() {
           >
             <div className="space-y-4 text-center">
               <span className="text-sm font-bold tracking-widest uppercase opacity-70">
-                Pregunta {currentStep + 1} de 3
+                Pregunta {currentStep + 1} de {questions.length}
               </span>
               <h3 className="text-3xl md:text-4xl font-heading font-medium leading-tight">
                 {questions[currentStep].question}
@@ -126,14 +148,14 @@ export default function TestFeConciencia() {
                 <button
                   key={option.id}
                   onClick={() => handleOptionClick(option.id)}
-                  className={`w-full text-left p-5 rounded-full border-2 transition-all duration-300 font-sans text-lg 
-                    ${currentStep === 2 
+                  className={`w-full text-center p-5 rounded-full border-2 transition-all duration-300 font-sans text-lg 
+                    ${currentStep >= Math.floor(questions.length / 2) 
                       ? 'border-white/30 hover:border-white hover:bg-white hover:text-[#3b5998] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]' 
                       : 'border-indigo/20 hover:border-indigo hover:bg-white hover:shadow-lg'
                     }
                   `}
                 >
-                  <span className="font-bold mr-3">{option.id})</span> {option.text}
+                  {option.text}
                 </button>
               ))}
             </div>

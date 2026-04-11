@@ -8,7 +8,7 @@ export default function InteractiveDiagrams() {
 
   const nodes = [
     { id: 1, name: "Conciencia", desc: "El centro de la percepción humana de donde emana la observación sin juicios.", x: "50%", y: "20%" },
-    { id: 2, name: "Guía Interno", desc: "La voz de la sabiduría sanadora a la que accesamos a través de Oidaterapia.", x: "20%", y: "60%" },
+    { id: 2, name: "Guía Interno", desc: "La voz de la sabiduría sanadora a la que accesamos a través de Oida Terapia.", x: "20%", y: "60%" },
     { id: 3, name: "Fe Sanadora", desc: "La confianza vital en el proceso terapéutico y en nuestra sanación existencial.", x: "80%", y: "60%" },
   ];
 

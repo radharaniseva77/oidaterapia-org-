@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import OntologyWalkthrough from "@/components/OntologyWalkthrough";
 import TherapyCTA from "@/components/TherapyCTA";
 import "./globals.css";
 
@@ -16,8 +17,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Oidaterapia - Psicología Perenne",
-  description: "Portal de Oidaterapia y Psicología Perenne",
+  title: "Oida Terapia - Psicología Perenne",
+  description: "Portal de Oida Terapia y Psicología Perenne",
 };
 
 export default function RootLayout({
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
         </main>
         <TherapyCTA />
+        <OntologyWalkthrough />
         <FloatingWhatsApp />
       </body>
     </html>

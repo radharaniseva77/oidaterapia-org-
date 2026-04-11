@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Estilo de Vida | Oidaterapia',
+  title: 'Estilo de Vida | Oida Terapia',
 };
 
 export default function EstiloDeVidaPage() {
