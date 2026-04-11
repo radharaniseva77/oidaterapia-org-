@@ -73,6 +73,16 @@ const questions = [
       { id: 'D', text: "Intenté sanar, pero las traiciones y las crisis me demostraron que es muy efímero." },
       { id: 'E', text: "Sí, asumiendo mi rol de animado, purificando mis hábitos y guiado por la fe." }
     ]
+  },
+  {
+    question: "¿Cómo enfrentas la transición o fin de la vida según tu fe actual?",
+    options: [
+      { id: 'A', text: "Como el fin absoluto que me resigno a aceptar como una realidad biológica indiscutible." },
+      { id: 'B', text: "Lo evito pensar y vivo enfocado en aprovechar el momento mientras haya comodidades." },
+      { id: 'C', text: "Espero ciegamente una recompensa del más allá basada únicamente en mi afiliación sectaria." },
+      { id: 'D', text: "Me genera vacío y frustración pensar en perder todo lo construido sin garantías firmes." },
+      { id: 'E', text: "Como parte de mi aprendizaje de animado, confiando en la eternidad de la unidad de conciencia." }
+    ]
   }
 ];
 
@@ -107,6 +117,7 @@ const backgrounds = [
   "#5D8AA8", // P5
   "#3b5998", // P6
   "#2C3E50", // P7
+  "#1A263D", // P8
   "#1A365D"  // Result
 ];
 
@@ -118,6 +129,7 @@ const textColors = [
   "text-white",  // P5
   "text-white",  // P6
   "text-white",  // P7
+  "text-white",  // P8
   "text-arena"   // Result
 ];
 
