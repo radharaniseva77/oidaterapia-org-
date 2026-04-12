@@ -14,11 +14,11 @@ import { createPortal } from 'react-dom';
 */
 const layerImages = [
   { id: 1, src: "/assets/oidaterapia/animado-1.png", zIndex: 10 },
-  { id: 2, src: "/assets/oidaterapia/animado-2.png", zIndex: 60 },
+  { id: 2, src: "/assets/oidaterapia/animado-2.png", zIndex: 20 },
   { id: 3, src: "/assets/oidaterapia/animado-3.png", zIndex: 50 },
-  { id: 4, src: "/assets/oidaterapia/animado-4.png", zIndex: 40 },
+  { id: 4, src: "/assets/oidaterapia/animado-4.png", zIndex: 60 },
   { id: 5, src: "/assets/oidaterapia/animado-5.png", zIndex: 30 },
-  { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 20 },
+  { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 40 },
 ];
 
 /* Textos extraídos con líneas relativas apuntando rigurosamente a las áreas definidas */
@@ -73,13 +73,13 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Controla que cada capa aparezca cada 0.3s
+      staggerChildren: 0.15, // Stagger estricto 0.15s
     }
   }
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: "easeOut" } }
 };
 
