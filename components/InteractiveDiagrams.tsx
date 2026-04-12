@@ -9,8 +9,8 @@ export default function InteractiveDiagrams() {
   // Jerarquía estricta según indicaciones (Z-INDEX REAL)
   const animadoImages = [
     { id: 1, src: "/assets/oidaterapia/animado-1.png", zIndex: 10, delay: 0.2 }, // Fondo: animado-1
-    { id: 5, src: "/assets/oidaterapia/animado-5.png", zIndex: 20, delay: 1.4 }, // Cuerpo sutil
-    { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 30, delay: 1.7 }, // Cuerpo físico (Sobre el sutil)
+    { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 20, delay: 1.7 }, // Cuerpo físico
+    { id: 5, src: "/assets/oidaterapia/animado-5.png", zIndex: 30, delay: 1.4 }, // Cuerpo sutil (Sobre el físico)
     { id: 4, src: "/assets/oidaterapia/animado-4.png", zIndex: 40, delay: 1.1 }, // Conexiones
     { id: 3, src: "/assets/oidaterapia/animado-3.png", zIndex: 50, delay: 0.8 }, // Guía interno (Corazón)
     { id: 2, src: "/assets/oidaterapia/animado-2.png", zIndex: 60, delay: 0.5 }, // Divinidad (Esfera)

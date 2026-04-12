@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { X } from 'lucide-react';
 import { createPortal } from 'react-dom';
 
@@ -17,8 +17,8 @@ const layerImages = [
   { id: 2, src: "/assets/oidaterapia/animado-2.png", zIndex: 60 },
   { id: 3, src: "/assets/oidaterapia/animado-3.png", zIndex: 50 },
   { id: 4, src: "/assets/oidaterapia/animado-4.png", zIndex: 40 },
-  { id: 5, src: "/assets/oidaterapia/animado-5.png", zIndex: 20 },
-  { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 30 },
+  { id: 5, src: "/assets/oidaterapia/animado-5.png", zIndex: 30 },
+  { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 20 },
 ];
 
 /* Textos extraídos con líneas relativas apuntando rigurosamente a las áreas definidas */
@@ -68,7 +68,7 @@ const textNodes = [
 ];
 
 // Stagger Variants (Animación en Bloque)
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -78,7 +78,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: "easeOut" } }
 };
