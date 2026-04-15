@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const images = [
   "/assets/oidaterapia/slider-1.jpg",
   "/assets/oidaterapia/slider-2.jpg",
-  "/assets/oidaterapia/slider-03.jpg",
+  "/assets/oidaterapia/slider-03.jpg?v=2",
   "/assets/oidaterapia/slider-4.jpg",
   "/assets/oidaterapia/slider-5.jpg"
 ];
