@@ -137,6 +137,33 @@ export default function TestFeConciencia() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsLoading(true);
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+      if (res.ok) {
+        setIsSubscribed(true);
+      } else {
+        alert("Hubo un error procesando el correo.");
+      }
+    } catch {
+      alert("Hubo un error contactando el servidor.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleOptionClick = (optionId: string) => {
     const newAnswers = [...answers, optionId];
@@ -225,17 +252,38 @@ export default function TestFeConciencia() {
               </p>
             </div>
 
-            <div className="bg-white/10 p-8 rounded-3xl backdrop-blur-sm border border-white/20 mt-12 space-y-6 text-left">
+            <div className="bg-white/10 p-8 rounded-3xl backdrop-blur-sm border border-white/20 mt-12 space-y-6 text-left relative">
+              <AnimatePresence>
+                {isSubscribed && (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#1A365D] rounded-3xl border border-white/30"
+                  >
+                    <div className="w-16 h-16 bg-arena text-indigo rounded-full flex items-center justify-center mb-4">
+                      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold font-heading mb-2 text-arena">¡Suscripción exitosa!</h3>
+                    <p className="text-white/80 font-sans text-center max-w-sm px-6">
+                      Pronto nos comunicaremos contigo enviando tus resultados.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <h4 className="text-lg md:text-xl font-medium text-center text-white">
                 Ingresa tu correo para recibir una guía detallada sobre cómo elevar tu estado de conciencia y agendar una sesión.
               </h4>
               <form 
-                onSubmit={(e) => { e.preventDefault(); }}
+                onSubmit={handleSubscribe}
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <input
                   type="email"
                   value={email}
+                  disabled={isLoading}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Tu mejor correo..."
                   required
@@ -243,9 +291,10 @@ export default function TestFeConciencia() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-4 rounded-full bg-arena text-indigo font-bold hover:bg-white hover:shadow-[0_0_20px_rgba(250,247,242,0.4)] transition-all font-sans uppercase tracking-wide"
+                  disabled={isLoading}
+                  className="px-8 py-4 rounded-full bg-arena text-indigo font-bold hover:bg-white hover:shadow-[0_0_20px_rgba(250,247,242,0.4)] transition-all font-sans uppercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Recibir Guía
+                  {isLoading ? 'Enviando...' : 'Recibir Guía'}
                 </button>
               </form>
             </div>

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import OntologyWalkthrough from "@/components/OntologyWalkthrough";
 import TherapyCTA from "@/components/TherapyCTA";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -38,6 +39,7 @@ export default function RootLayout({
         <TherapyCTA />
         <OntologyWalkthrough />
         <FloatingWhatsApp />
+        <Footer />
       </body>
     </html>
   );

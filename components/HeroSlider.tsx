@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const images = [
   "/assets/oidaterapia/slider-1.jpg",
   "/assets/oidaterapia/slider-2.jpg",
-  "/assets/oidaterapia/slider-3.jpg",
+  "/assets/oidaterapia/slider-03.jpg",
   "/assets/oidaterapia/slider-4.jpg",
   "/assets/oidaterapia/slider-5.jpg"
 ];
@@ -37,9 +37,9 @@ export default function HeroSlider() {
       </AnimatePresence>
       <div className="absolute inset-0 bg-indigo/40 mix-blend-multiply" />
       <div className="absolute inset-0 bg-gradient-to-t from-arena/90 via-transparent to-transparent" />
-      
+
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-        <motion.h1 
+        <motion.h1
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -48,7 +48,7 @@ export default function HeroSlider() {
         >
           Psicología Perenne
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}

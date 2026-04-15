@@ -6,19 +6,18 @@ import { X } from 'lucide-react';
 import { createPortal } from 'react-dom';
 
 /*
-  ORDEN Y JERARQUÍA EXTRÍCTAMENTE DEFINIDA DEL MANUAL 
-  Orden de aparición: 1 -> 2 -> 3 -> 4 -> 5 -> 6
-  Z-Index Estricto (Stacking Front-to-Back mapping):
-  1: z-10 | 6: z-30 | 5: z-20 | 4: z-40 | 3: z-50 | 2: z-60
-  Nota: "el 6 debe estar sobre el 5". Así que zIndex(6) = 30 y zIndex(5) = 20.
+  ORDEN Y JERARQUÍA EXTRÍCTAMENTE DEFINIDA:
+  Aparición cronológica: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+  Z-Index Estricto (Tailwind classes):
+  1: z-[10] | 2: z-[20] | 5: z-[30] | 6: z-[40] | 3: z-[50] | 4: z-[60]
 */
-const layerImages = [
-  { id: 1, src: "/assets/oidaterapia/animado-1.png", zIndex: 10 },
-  { id: 2, src: "/assets/oidaterapia/animado-2.png", zIndex: 20 },
-  { id: 3, src: "/assets/oidaterapia/animado-3.png", zIndex: 50 },
-  { id: 4, src: "/assets/oidaterapia/animado-4.png", zIndex: 60 },
-  { id: 5, src: "/assets/oidaterapia/animado-5.png", zIndex: 30 },
-  { id: 6, src: "/assets/oidaterapia/animado-6.png", zIndex: 40 },
+const sequentialLayers = [
+  { id: 1, src: "/assets/oidaterapia/animado-1.png", layerClass: "z-[10]" },
+  { id: 2, src: "/assets/oidaterapia/animado-2.png", layerClass: "z-[20]" },
+  { id: 3, src: "/assets/oidaterapia/animado-3.png", layerClass: "z-[50]" },
+  { id: 4, src: "/assets/oidaterapia/animado-4.png", layerClass: "z-[60]" },
+  { id: 5, src: "/assets/oidaterapia/animado-5.png", layerClass: "z-[30]" },
+  { id: 6, src: "/assets/oidaterapia/animado-6.png", layerClass: "z-[40]" },
 ];
 
 /* Textos extraídos con líneas relativas apuntando rigurosamente a las áreas definidas */
@@ -80,7 +79,7 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: "easeOut" } }
+  visible: { opacity: 1, scale: 1, transition: { duration: 1.2 } }
 };
 
 export default function OntologyWalkthrough() {
@@ -97,7 +96,6 @@ export default function OntologyWalkthrough() {
 
   return (
     <>
-      {/* Botón Flotante para llamar al Modal */}
       <div className="fixed bottom-[85px] md:bottom-[90px] right-2 z-[90]">
         <motion.button
           onClick={() => setIsOpen(true)}
@@ -107,7 +105,6 @@ export default function OntologyWalkthrough() {
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          {/* Única instancia flotante de animado permitida para activar modal */}
           <img 
             src="/assets/oidaterapia/animado-flotante.png" 
             alt="Abrir Relación entre Divinidad y Animado" 
@@ -116,13 +113,11 @@ export default function OntologyWalkthrough() {
         </motion.button>
       </div>
 
-      {/* RENDERIZADO DEL MODAL ABSOLUTO */}
       {typeof document !== 'undefined' && createPortal(
         <AnimatePresence>
           {isOpen && (
             <div className="fixed inset-0 z-[9999] flex flex-col items-center bg-[#0A192F] overflow-y-auto overflow-x-hidden p-4 md:p-8">
               
-              {/* Fondo estático espeluznante / cósmico */}
               <div className="fixed inset-0 pointer-events-none">
                 <img 
                   src="/assets/oidaterapia/espacio-fondo.png" 
@@ -133,7 +128,6 @@ export default function OntologyWalkthrough() {
 
               <div className="relative z-10 w-full min-h-screen flex flex-col items-center pb-20 pt-4">
                 
-                {/* Botón Salir */}
                 <button 
                   onClick={() => setIsOpen(false)}
                   className="absolute top-0 right-0 p-3 rounded-full bg-white/10 hover:bg-white/30 text-white backdrop-blur-md border border-white/20 transition-transform hover:rotate-90 z-[100]"
@@ -141,21 +135,18 @@ export default function OntologyWalkthrough() {
                   <X className="w-8 h-8" />
                 </button>
 
-                {/* Título estricto */}
                 <motion.h2 
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white text-center drop-shadow-xl mt-10 mb-8 max-w-4xl tracking-tight z-50"
+                  className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white text-center drop-shadow-xl mt-10 mb-8 max-w-4xl tracking-tight z-[100]"
                 >
                   Relación entre la Divinidad y el Animado
                 </motion.h2>
 
-                {/* Contenedor Interactivo Ontológico */}
-                <div className="relative w-full max-w-[1400px] flex 1 items-center justify-center min-h-[600px] lg:min-h-[800px] mt-4 lg:mt-8">
+                <div className="relative w-full max-w-[1400px] flex flex-1 items-center justify-center min-h-[600px] lg:min-h-[800px] mt-4 lg:mt-8">
 
-                  {/* ZONA DE LÍNEAS SVG ESTRUCTURALES */}
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block z-[45]">
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block z-[80]">
                     {textNodes.map((n) => (
                       <motion.line 
                         key={`vector-${n.id}`}
@@ -169,27 +160,22 @@ export default function OntologyWalkthrough() {
                     ))}
                   </svg>
 
-                  {/* STACKING MODULAR : EL ANIMADO (STAGGER ANIMATION) */}
                   <motion.div 
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                     className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] flex-shrink-0 mx-auto"
                   >
-                    {/* Al iterar sobre el array 1..6, framer motion renderizará cronológicamente la opacidad, 
-                        mientras el zIndex predeterminado CSS dictará las posiciones visuales perennes */}
-                    {layerImages.map((img) => (
+                    {sequentialLayers.map((img) => (
                       <motion.img
                         key={`layer-${img.id}`}
                         src={img.src}
                         variants={itemVariants}
-                        className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-                        style={{ zIndex: img.zIndex }}
+                        className={`absolute inset-0 w-full h-full object-contain pointer-events-none ${img.layerClass}`}
                       />
                     ))}
                   </motion.div>
 
-                  {/* BLOQUES DE TEXTOS - ABSOLUTOS LG, PILA EN MOBILE */}
                   <div className="absolute inset-x-0 bottom-[-400px] flex flex-col gap-4 lg:static z-[100]">
                     {textNodes.map((node, index) => (
                       <motion.div
