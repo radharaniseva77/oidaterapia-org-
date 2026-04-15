@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     console.log(`[LEAD CAPTURADO] Correo recibido: ${email}`);
 
     return NextResponse.json({ message: 'Suscripción exitosa. Pronto enviaremos tus resultados.' }, { status: 200 });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: 'Error del servidor procesando correo' }, { status: 500 });
   }
 }
