@@ -108,7 +108,7 @@ export default function OntologyWalkthrough() {
           <img 
             src="/assets/oidaterapia/animado-flotante.png" 
             alt="Abrir Relación entre Divinidad y Animado" 
-            className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]"
+            className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]"
           />
         </motion.button>
       </div>

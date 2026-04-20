@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     /* Cambiado bg-[#F9F9F9] por bg-[#D9C5A3] (Beige) */
-    <nav className="fixed w-full top-0 z-[60] bg-[#D9C5A3] shadow-md border-b border-gray-200 transition-all duration-300 py-2 px-4 sm:px-6 xl:px-8">
+    <nav className="fixed w-full top-0 z-[60] bg-[#D9C5A3] shadow-md border-b border-gray-200 transition-all duration-300 py-6 px-4 sm:px-6 xl:px-8">
       <div className="max-w-[90rem] mx-auto flex items-center justify-between">
 
         <div className="flex items-center space-x-6 xl:space-x-10 flex-1">
@@ -54,7 +54,7 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveDropdown(mod.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link href={mod.path} className="px-4 py-2 rounded-lg text-lg xl:text-xl font-semibold transition-all duration-300 ease-out text-[#0A192F] hover:bg-white/50 hover:shadow-sm inline-flex items-center tracking-tight">
+                <Link href={mod.path} className="px-4 py-2 rounded-lg text-xl xl:text-2xl font-semibold transition-all duration-300 ease-out text-[#0A192F] hover:bg-white/50 hover:shadow-sm inline-flex items-center tracking-tight">
                   {mod.name}
                   <ChevronDown className="ml-1.5 h-4 w-4 opacity-70" />
                 </Link>
