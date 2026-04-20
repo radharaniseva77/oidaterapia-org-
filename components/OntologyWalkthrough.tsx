@@ -96,7 +96,7 @@ export default function OntologyWalkthrough() {
 
   return (
     <>
-      <div className="fixed bottom-[85px] md:bottom-[90px] right-2 z-[90]">
+      <div className="fixed bottom-[85px] md:bottom-[90px] right-6 z-[90] w-16 flex justify-center">
         <motion.button
           onClick={() => setIsOpen(true)}
           className="relative outline-none z-[90] cursor-pointer"
