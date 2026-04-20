@@ -27,7 +27,7 @@ export default function WisdomPortal() {
   return (
     <>
       {/* EL MEDALLÓN (Logo Trigger) */}
-      <div className="relative flex items-center justify-center -mt-2 -mb-4 lg:-mt-14 lg:-mb-16 z-50">
+      <div className="relative flex items-center justify-center -mt-4 -mb-8 lg:-mt-16 lg:-mb-16 z-50">
         {/* Pulsing Light Glow Effect behind the medallion */}
         <motion.div
           className="absolute inset-0 bg-[#0A192F]/40 rounded-full blur-xl"

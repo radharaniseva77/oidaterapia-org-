@@ -96,7 +96,7 @@ export default function OntologyWalkthrough() {
 
   return (
     <>
-      <div className="fixed bottom-[100px] right-6 z-[90] flex justify-center w-16">
+      <div className="fixed bottom-[110px] right-[56px] z-[90] transform translate-x-[50%] flex justify-center items-center">
         <motion.button
           onClick={() => setIsOpen(true)}
           className="relative outline-none z-[90] cursor-pointer origin-bottom"
@@ -108,7 +108,7 @@ export default function OntologyWalkthrough() {
           <img
             src="/assets/oidaterapia/animado-flotante.png"
             alt="Abrir Relación entre Divinidad y Animado"
-            className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] pointer-events-none"
+            className="w-[160px] h-[160px] md:w-[240px] md:h-[240px] object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] pointer-events-none"
           />
         </motion.button>
       </div>
