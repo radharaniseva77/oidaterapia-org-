@@ -96,19 +96,19 @@ export default function OntologyWalkthrough() {
 
   return (
     <>
-      <div className="fixed bottom-[20px] md:bottom-[20px] right-6 z-[90] w-16 flex justify-center">
+      <div className="fixed bottom-[100px] right-6 z-[90] flex justify-center w-16">
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="relative outline-none z-[90] cursor-pointer"
-          whileHover={{ scale: 1.15 }}
+          className="relative outline-none z-[90] cursor-pointer origin-bottom"
+          whileHover={{ scale: 1.15 }} 
           whileTap={{ scale: 0.95 }}
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         >
-          <img 
-            src="/assets/oidaterapia/animado-flotante.png" 
-            alt="Abrir Relación entre Divinidad y Animado" 
-            className="w-[450px] h-[450px] md:w-[600px] md:h-[600px] object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]"
+          <img
+            src="/assets/oidaterapia/animado-flotante.png"
+            alt="Abrir Relación entre Divinidad y Animado"
+            className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] pointer-events-none"
           />
         </motion.button>
       </div>
@@ -117,25 +117,25 @@ export default function OntologyWalkthrough() {
         <AnimatePresence>
           {isOpen && (
             <div className="fixed inset-0 z-[9999] flex flex-col items-center bg-[#0A192F] overflow-y-auto overflow-x-hidden p-4 md:p-8">
-              
+
               <div className="fixed inset-0 pointer-events-none">
-                <img 
-                  src="/assets/oidaterapia/espacio-fondo.png" 
+                <img
+                  src="/assets/oidaterapia/espacio-fondo.png"
                   alt="Espacio"
                   className="w-full h-full object-cover opacity-60 mix-blend-screen"
                 />
               </div>
 
               <div className="relative z-10 w-full min-h-screen flex flex-col items-center pb-20 pt-4">
-                
-                <button 
+
+                <button
                   onClick={() => setIsOpen(false)}
                   className="absolute top-0 right-0 p-3 rounded-full bg-white/10 hover:bg-white/30 text-white backdrop-blur-md border border-white/20 transition-transform hover:rotate-90 z-[100]"
                 >
                   <X className="w-8 h-8" />
                 </button>
 
-                <motion.h2 
+                <motion.h2
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
@@ -148,7 +148,7 @@ export default function OntologyWalkthrough() {
 
                   <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block z-[80]">
                     {textNodes.map((n) => (
-                      <motion.line 
+                      <motion.line
                         key={`vector-${n.id}`}
                         x1={n.lineX1} y1={n.lineY1} x2={n.lineX2} y2={n.lineY2}
                         stroke="rgba(255,255,255,0.7)" strokeWidth="1.5"
@@ -160,7 +160,7 @@ export default function OntologyWalkthrough() {
                     ))}
                   </svg>
 
-                  <motion.div 
+                  <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
