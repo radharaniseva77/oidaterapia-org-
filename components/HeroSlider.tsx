@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // He cambiado esto a V3 para forzar a Vercel a descargar las imágenes de nuevo
 const ASSET_VERSION = "20260415-v3";
+const urlBuster = typeof window !== 'undefined' ? Date.now() : 'build';
 
 const images = [
-  `/assets/oidaterapia/slider-1.jpg?v=${ASSET_VERSION}`,
-  `/assets/oidaterapia/slider-2.jpg?v=${ASSET_VERSION}`,
-  `/assets/oidaterapia/slider-3.jpg?v=${ASSET_VERSION}`, // Esta es tu imagen nueva
-  `/assets/oidaterapia/slider-4.jpg?v=${ASSET_VERSION}`,
-  `/assets/oidaterapia/slider-5.jpg?v=${ASSET_VERSION}`
+  `/assets/oidaterapia/slider-1.jpg?v=${ASSET_VERSION}&t=${urlBuster}`,
+  `/assets/oidaterapia/slider-2.jpg?v=${ASSET_VERSION}&t=${urlBuster}`,
+  `/assets/oidaterapia/slider-3.jpg?v=${ASSET_VERSION}&t=${urlBuster}`, // Esta es tu imagen nueva
+  `/assets/oidaterapia/slider-4.jpg?v=${ASSET_VERSION}&t=${urlBuster}`,
+  `/assets/oidaterapia/slider-5.jpg?v=${ASSET_VERSION}&t=${urlBuster}`
 ];
 
 export default function HeroSlider() {

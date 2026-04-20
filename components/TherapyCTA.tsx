@@ -32,7 +32,7 @@ export default function TherapyCTA() {
           transition={{ delay: 0.4, duration: 0.6, type: "spring" }}
         >
           <a 
-            href="https://wa.me/573102436421"
+            href="https://wa.me/573102221677"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-8 px-10 py-5 bg-indigo text-arena rounded-full font-bold text-lg hover:bg-tierra hover:text-indigo hover:shadow-xl hover:-translate-y-1 transition-all duration-300"

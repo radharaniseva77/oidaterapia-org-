@@ -1,7 +1,6 @@
 import { Search } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
 import SocialFeed from "@/components/SocialFeed";
-import InteractiveDiagrams from "@/components/InteractiveDiagrams";
 
 export default function Home() {
   return (
@@ -26,16 +25,6 @@ export default function Home() {
         <HeroSlider />
       </section>
 
-      {/* Existing Sections */}
-      <section className="py-16 text-indigo">
-         <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold mb-4 tracking-tight">Explora los Conceptos Fundamentales</h2>
-            <p className="font-sans max-w-2xl mx-auto text-lg leading-relaxed text-indigo/80">
-               El ser humano es una integridad de mente, cuerpo y espíritu. Entiende nuestras dinámicas terapéuticas e iníciate en la sanación.
-            </p>
-         </div>
-         <InteractiveDiagrams />
-      </section>
       <SocialFeed />
     </div>
   );

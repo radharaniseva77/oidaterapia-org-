@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start space-y-3">
           <h4 className="font-heading font-bold text-lg mb-2 border-b border-cielo inline-block">Navegación</h4>
           <Link href="/" className="text-white/80 hover:text-cielo transition-colors font-sans text-sm">Inicio</Link>
-          <Link href="/cuestionarios" className="text-white/80 hover:text-cielo transition-colors font-sans text-sm">Cuestionarios</Link>
+          <Link href="/ayudas-terapeuticas/test" className="text-white/80 hover:text-cielo transition-colors font-sans text-sm">Cuestionarios</Link>
           <Link href="/blog" className="text-white/80 hover:text-cielo transition-colors font-sans text-sm">Blog</Link>
         </div>
 
