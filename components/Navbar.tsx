@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     /* Cambiado bg-[#F9F9F9] por bg-[#D9C5A3] (Beige) */
-    <nav className="fixed w-full top-0 z-[60] bg-[#D9C5A3] shadow-md border-b border-gray-200 transition-all duration-300 pt-6 pb-12 px-4 sm:px-6 xl:px-8">
+    <nav className="fixed w-full top-0 z-[60] bg-[#D9C5A3] shadow-md border-b border-gray-200 transition-all duration-300 pt-12 pb-12 px-4 sm:px-6 xl:px-8">
       <div className="max-w-[90rem] mx-auto flex items-center justify-between">
 
         <div className="flex items-center space-x-6 xl:space-x-10 flex-1">
