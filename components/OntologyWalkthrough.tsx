@@ -100,7 +100,7 @@ export default function OntologyWalkthrough() {
         <motion.button
           onClick={() => setIsOpen(true)}
           className="relative outline-none z-[90] cursor-pointer origin-bottom"
-          whileHover={{ scale: 1.15 }} 
+          whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
